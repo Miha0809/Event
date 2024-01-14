@@ -1,14 +1,25 @@
 package com.slamy.app.models;
 
-import com.slamy.app.interfaces.IUser;
-import com.slamy.app.services.Hash;
-import jakarta.persistence.*;
+import lombok.*;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
 
-import static jakarta.persistence.GenerationType.SEQUENCE;
+import javax.persistence.*;
+import java.util.Collection;
+import java.util.Collections;
 
+import static javax.persistence.GenerationType.SEQUENCE;
+
+@Data
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 @Entity(name = "User")
 @Table(name = "users")
-public class User implements IUser {
+public class User implements UserDetails {
+    @Setter
+    @Getter
     @Id
     @SequenceGenerator(
             name = "user_sequence",
@@ -22,105 +33,83 @@ public class User implements IUser {
     @Column(name = "id", updatable = false, nullable = false)
     private Long id;
 
+    @Setter
+    @Getter
     @Column(name = "age", nullable = false)
     private int age;
 
+    @Setter
+    @Getter
     @Column(name = "first_name", nullable = false)
     private String firstName = "";
+
+    @Setter
+    @Getter
     @Column(name = "last_name", nullable = false)
     private String lastName = "";
+
+    @Setter
     @Column(name = "password", nullable = false)
     private String password = "";
 
-    @Column(name = "is_logged_in", nullable = false)
-    private boolean isLoggedIn = false;
 
     @OneToOne
     @JoinColumn(name = "email_id", referencedColumnName = "id")
-    private Email email = null;
+//    @Setter
+//    @Getter
+//    @Column(name = "email", nullable = false, unique = true)
+    private Email email;
 
-    public User() { }
+    @Enumerated(EnumType.STRING)
+    private Role role;
 
     public User(int age,
                 String firstName,
                 String lastName,
                 Email email,
-                String password,
-                boolean isLoggedIn) {
+                String password) {
         this.age = age;
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
         this.password = password;
-        this.isLoggedIn = isLoggedIn;
     }
 
-    public Long getId() {
-        return this.id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    @Override
-    public int getAge() {
-        return age;
-    }
-
-    @Override
-    public void setAge(int age) {
-        this.age = age;
-    }
-
-    @Override
-    public String getFirstName() {
-        return this.firstName;
-    }
-
-    @Override
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
-    @Override
-    public String getLastName() {
-        return this.lastName;
-    }
-
-    @Override
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
-
-    @Override
-    public Email getEmail() {
-        return this.email;
-    }
-
-    @Override
-    public void setEmail(Email email) {
-        this.email = email;
-    }
 
     @Override
     public String getPassword() {
         return this.password;
     }
 
+
     @Override
-    public void setPassword(String password) {
-        this.password = Hash.getHash(password);
+    public Collection<? extends GrantedAuthority> getAuthorities() {
+        return Collections.singleton(new SimpleGrantedAuthority(this.getRole().name()));
     }
 
     @Override
-    public boolean getIsLoggedIn() {
-        return this.isLoggedIn;
+    public String getUsername() {
+        return this.email.getName();
     }
 
     @Override
-    public void setIsLoggedIn(boolean isLoggedIn) {
-        this.isLoggedIn = isLoggedIn;
+    public boolean isAccountNonExpired() {
+        return true;
+    }
+
+    @Override
+    public boolean isAccountNonLocked() {
+        return true;
+    }
+
+    @Override
+    public boolean isCredentialsNonExpired() {
+        return true;
+    }
+
+    @Override
+    public boolean isEnabled() {
+        return true;
     }
 
     @Override
@@ -132,7 +121,6 @@ public class User implements IUser {
                 ", lastName='" + lastName + '\'' +
                 ", email='" + email + '\'' +
                 ", password='" + password + '\'' +
-                ", isLoggedIn=" + isLoggedIn + '\'' +
                 '}';
     }
 }

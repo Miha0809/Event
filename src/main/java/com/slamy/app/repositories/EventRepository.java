@@ -1,6 +1,5 @@
 package com.slamy.app.repositories;
 
-import com.slamy.app.interfaces.IEvent;
 import com.slamy.app.models.Event;
 import org.springframework.data.repository.CrudRepository;
 

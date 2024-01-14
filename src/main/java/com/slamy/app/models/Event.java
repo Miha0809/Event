@@ -1,13 +1,18 @@
 package com.slamy.app.models;
 
-import com.slamy.app.interfaces.IEvent;
-import jakarta.persistence.*;
 
-import static jakarta.persistence.GenerationType.SEQUENCE;
+import lombok.Getter;
+import lombok.Setter;
 
+import javax.persistence.*;
+
+import static javax.persistence.GenerationType.SEQUENCE;
+
+@Setter
+@Getter
 @Entity(name = "Event")
 @Table(name = "Events")
-public class Event implements IEvent {
+public class Event {
     @Id
     @SequenceGenerator(
             name = "event_sequence",
@@ -21,11 +26,4 @@ public class Event implements IEvent {
     @Column(name = "id", updatable = false, nullable = false)
     private Long id;
 
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public Long getId() {
-        return id;
-    }
 }
