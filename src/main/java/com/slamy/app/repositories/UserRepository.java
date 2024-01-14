@@ -1,17 +1,14 @@
 package com.slamy.app.repositories;
 
+import com.slamy.app.models.Email;
 import com.slamy.app.models.User;
-import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.repository.CrudRepository;
 
 import java.util.List;
-import java.util.Optional;
 
-public interface UserRepository extends JpaRepository<User, Long> {
-    User findUserByEmail(String email);
-//    User findUserByIsLoggedIn(boolean isLoggedIn);
-//    User findUserByIsLoggedIn(boolean isLoggedIn);
-    List<User> findAll();
-    User findUserByFirstNameAndLastName(String firstname, String lastName);
-
-    Optional<User> findByEmail(String email);
+public interface UserRepository extends CrudRepository<User, Long> {
+    User findByFirstNameAndLastName(String firstName, String lastName);
+    User findByEmail(Email email);
+    List<User> findAllBy();
 }
+

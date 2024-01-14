@@ -1,9 +1,16 @@
 package com.slamy.app.models;
 
-import jakarta.persistence.*;
+import lombok.*;
 
-import static jakarta.persistence.GenerationType.SEQUENCE;
+import javax.persistence.*;
+import static javax.persistence.GenerationType.SEQUENCE;
 
+@Setter
+@Getter
+@Data
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 @Entity(name = "Email")
 @Table(
         name = "emails",
@@ -25,36 +32,14 @@ public class Email {
     @Column(name = "id", updatable = false)
     private Long id;
 
-    @Column(name = "email", nullable = false, unique = true)
-    private String email;
-
-    public Email() { }
-
-    public Email(String name) {
-        this.email = name;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getEmail() {
-        return this.email;
-    }
-
-    public void setEmail(String name) {
-        this.email = name;
-    }
+    @Column(name = "name", nullable = false, unique = true)
+    private String name;
 
     @Override
     public String toString() {
         return "Email{" +
                 "id=" + id +
-                ", email='" + email + '\'' +
+                ", name='" + name + '\'' +
                 '}';
     }
 }

@@ -1,9 +1,15 @@
 package com.slamy.app.models;
 
-import jakarta.persistence.*;
 
-import static jakarta.persistence.GenerationType.SEQUENCE;
+import lombok.Getter;
+import lombok.Setter;
 
+import javax.persistence.*;
+
+import static javax.persistence.GenerationType.SEQUENCE;
+
+@Setter
+@Getter
 @Entity(name = "Event")
 @Table(name = "Events")
 public class Event {
@@ -20,11 +26,4 @@ public class Event {
     @Column(name = "id", updatable = false, nullable = false)
     private Long id;
 
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public Long getId() {
-        return id;
-    }
 }
