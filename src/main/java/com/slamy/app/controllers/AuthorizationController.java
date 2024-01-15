@@ -47,6 +47,10 @@ public class AuthorizationController {
 
     @PostMapping("/register_as_admin")
     public String registerAsAdmin(@RequestBody User user) {
+        if (!this.userRepository.findAllBy().isEmpty()) {
+            return "User already exists with admin role";
+        }
+
         try {
             Email email = user.getEmail();
 
