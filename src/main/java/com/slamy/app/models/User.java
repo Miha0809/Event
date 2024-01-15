@@ -55,9 +55,6 @@ public class User implements UserDetails {
 
     @OneToOne
     @JoinColumn(name = "email_id", referencedColumnName = "id")
-//    @Setter
-//    @Getter
-//    @Column(name = "email", nullable = false, unique = true)
     private Email email;
 
     @Enumerated(EnumType.STRING)
