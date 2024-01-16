@@ -5,40 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ba65ad4b-8fa9-460f-b3b3-44fadadd0092" name="Changes" comment="Authorize">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/slamy/app/controllers/EventController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/app.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/slamy/app/controllers/AdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/slamy/app/controllers/AdminController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/slamy/app/controllers/EventController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/slamy/app/controllers/EventController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/slamy/app/controllers/ProfileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/slamy/app/controllers/ProfileController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/slamy/app/models/Event.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/slamy/app/models/Event.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/slamy/app/models/Participants.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/slamy/app/models/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/slamy/app/models/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/slamy/app/repositories/EventRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/slamy/app/repositories/EventRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/slamy/app/repositories/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/slamy/app/repositories/UserRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/slamy/app/AppApplication.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/slamy/app/configs/SecurityConfig.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/slamy/app/controllers/AuthorizationController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/slamy/app/controllers/InfoController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/slamy/app/controllers/ProfileController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/slamy/app/models/Email$EmailBuilder.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/slamy/app/models/Email.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/slamy/app/models/Event.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/slamy/app/models/EventRegistrations.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/slamy/app/models/Login.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/slamy/app/models/Participants.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/slamy/app/models/Role.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/slamy/app/models/User$UserBuilder.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/slamy/app/models/User.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/slamy/app/repositories/EmailRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/slamy/app/repositories/EventRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/slamy/app/repositories/UserRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/slamy/app/services/UserService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/slamy/app/AppApplicationTests.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -183,7 +155,7 @@
       <workItem from="1705401323742" duration="1708000" />
       <workItem from="1705404318584" duration="2859000" />
       <workItem from="1705411113360" duration="1677000" />
-      <workItem from="1705414690652" duration="4259000" />
+      <workItem from="1705414690652" duration="4907000" />
     </task>
     <task id="LOCAL-00001" summary="Authorize">
       <option name="closed" value="true" />

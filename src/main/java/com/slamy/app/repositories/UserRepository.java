@@ -10,5 +10,6 @@ import java.util.List;
 public interface UserRepository extends CrudRepository<User, Long> {
     User findByEmail(Email email);
     List<User> findAllBy();
+    List<User> findByEventsContains(Event event);
 }
 

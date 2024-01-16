@@ -11,4 +11,6 @@ import java.util.List;
 public interface EventRepository extends CrudRepository<Event, Long> {
      List<Event> getEventsBy();
      Event getEventById(Long id);
+     List<Event> findByUsersContains(User user);
+
 }

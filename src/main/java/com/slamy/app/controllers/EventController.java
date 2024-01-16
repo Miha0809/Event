@@ -4,6 +4,7 @@ package com.slamy.app.controllers;
 import com.slamy.app.models.Event;
 import com.slamy.app.models.User;
 import com.slamy.app.repositories.EventRepository;
+import com.slamy.app.repositories.UserRepository;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -12,9 +13,11 @@ import java.util.List;
 @RequestMapping("/api/public")
 public class EventController {
     private final EventRepository eventRepository;
+    private final UserRepository userRepository;
 
-    public EventController(EventRepository eventRepository) {
+    public EventController(EventRepository eventRepository, UserRepository userRepository) {
         this.eventRepository = eventRepository;
+        this.userRepository = userRepository;
     }
 
     @GetMapping("/events")
@@ -37,7 +40,16 @@ public class EventController {
             Event event = this.eventRepository.getEventById(id);
 
             return event.getUsers();
-//            return null;
+        } catch (Exception e) {
+            throw new Exception(e.getMessage());
+        }
+    }
+
+    @GetMapping("/event_participants/{id}")
+    public List<User> eventParticipants(@PathVariable("id") Long id) throws Exception {
+        try {
+            Event event = this.eventRepository.getEventById(id);
+            return this.userRepository.findByEventsContains(event);
         } catch (Exception e) {
             throw new Exception(e.getMessage());
         }

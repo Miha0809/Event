@@ -58,7 +58,6 @@ public class AdminController {
     public String deleteEvent(@PathVariable("id") Long id) {
         try {
             // TODO: виписуватись із івента
-            // TODO: показати учасників івента
             Event event = this.eventRepository.getEventById(id);
             this.eventRepository.delete(event);
 

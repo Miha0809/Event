@@ -79,7 +79,7 @@ public class ProfileController {
             Email email = this.emailRepository.findByName(authentication.getName());
             User user = this.userRepository.findByEmail(email);
 
-            return user.getEvents();
+            return this.eventRepository.findByUsersContains(user);
         } catch (Exception e) {
             throw new Exception(e.getMessage());
         }
