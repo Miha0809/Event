@@ -8,6 +8,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 import javax.persistence.*;
 import java.util.Collection;
 import java.util.Collections;
+import java.util.List;
 
 import static javax.persistence.GenerationType.SEQUENCE;
 
@@ -18,9 +19,9 @@ import static javax.persistence.GenerationType.SEQUENCE;
 @Entity(name = "User")
 @Table(name = "users")
 public class User implements UserDetails {
+    @Id
     @Setter
     @Getter
-    @Id
     @SequenceGenerator(
             name = "user_sequence",
             sequenceName = "user_sequence",
@@ -52,25 +53,19 @@ public class User implements UserDetails {
     @Column(name = "password", nullable = false)
     private String password = "";
 
-
     @OneToOne
     @JoinColumn(name = "email_id", referencedColumnName = "id")
     private Email email;
 
+    @ManyToMany(fetch = FetchType.EAGER)
+    @JoinTable(
+            name = "events_users",
+            joinColumns = @JoinColumn(name = "user_id"),
+            inverseJoinColumns = @JoinColumn(name = "event_id"))
+    private List<Event> events;
+
     @Enumerated(EnumType.STRING)
     private Role role;
-
-    public User(int age,
-                String firstName,
-                String lastName,
-                Email email,
-                String password) {
-        this.age = age;
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.email = email;
-        this.password = password;
-    }
 
 
     @Override

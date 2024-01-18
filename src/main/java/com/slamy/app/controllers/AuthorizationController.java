@@ -2,6 +2,7 @@ package com.slamy.app.controllers;
 
 import com.slamy.app.models.Email;
 import com.slamy.app.models.Login;
+import com.slamy.app.models.Role;
 import com.slamy.app.models.User;
 import com.slamy.app.repositories.EmailRepository;
 import com.slamy.app.repositories.UserRepository;
@@ -55,6 +56,7 @@ public class AuthorizationController {
             Email email = user.getEmail();
 
             if (email != null) {
+                user.setRole(Role.ROLE_ADMIN);
                 emailRepository.save(email);
             }
 
@@ -66,6 +68,4 @@ public class AuthorizationController {
             return e.getMessage();
         }
     }
-
-
 }
