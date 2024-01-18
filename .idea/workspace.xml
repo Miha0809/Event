@@ -7,10 +7,14 @@
     <list default="true" id="ba65ad4b-8fa9-460f-b3b3-44fadadd0092" name="Changes" comment="Authorize">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/slamy/app/controllers/AdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/slamy/app/controllers/AdminController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/slamy/app/controllers/EventController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/slamy/app/controllers/EventController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/slamy/app/controllers/AuthorizationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/slamy/app/controllers/AuthorizationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/slamy/app/controllers/InfoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/slamy/app/controllers/InfoController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/slamy/app/controllers/ProfileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/slamy/app/controllers/ProfileController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/slamy/app/models/Event.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/slamy/app/models/Event.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/slamy/app/models/EventRegistrations.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/slamy/app/models/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/slamy/app/models/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/slamy/app/repositories/EventRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/slamy/app/repositories/EventRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/slamy/app/repositories/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/slamy/app/repositories/UserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -155,7 +159,10 @@
       <workItem from="1705401323742" duration="1708000" />
       <workItem from="1705404318584" duration="2859000" />
       <workItem from="1705411113360" duration="1677000" />
-      <workItem from="1705414690652" duration="4907000" />
+      <workItem from="1705414690652" duration="5901000" />
+      <workItem from="1705421818883" duration="187000" />
+      <workItem from="1705601394100" duration="3308000" />
+      <workItem from="1705604964435" duration="628000" />
     </task>
     <task id="LOCAL-00001" summary="Authorize">
       <option name="closed" value="true" />

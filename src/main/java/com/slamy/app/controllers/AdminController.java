@@ -2,6 +2,7 @@ package com.slamy.app.controllers;
 
 import com.slamy.app.models.Email;
 import com.slamy.app.models.Event;
+import com.slamy.app.models.Role;
 import com.slamy.app.models.User;
 import com.slamy.app.repositories.EmailRepository;
 import com.slamy.app.repositories.EventRepository;
@@ -25,20 +26,21 @@ public class AdminController {
     }
 
     @PostMapping("/register_user")
-    public String registerUser(@RequestBody User user) {
+    public User registerUser(@RequestBody User user) throws Exception {
         try {
             Email email = user.getEmail();
 
             if (email != null) {
+                user.setRole(Role.ROLE_USER);
                 emailRepository.save(email);
             }
 
             user.setPassword(passwordEncoder.encode(user.getPassword()));
             this.userRepository.save(user);
 
-            return user.toString();
+            return user;
         } catch (Exception e) {
-            return e.getMessage();
+            throw new Exception(e.getMessage());
         }
     }
 

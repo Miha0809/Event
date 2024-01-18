@@ -12,12 +12,7 @@ import static javax.persistence.GenerationType.SEQUENCE;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity(name = "Email")
-@Table(
-        name = "emails",
-        uniqueConstraints = {
-                @UniqueConstraint(name = "email_name_unique", columnNames = "name")
-        }
-)
+@Table(name = "emails")
 public class Email {
     @Id
     @SequenceGenerator(

@@ -34,7 +34,7 @@ public class Event {
 
     @Setter
     @Getter
-    @Column(name = "name", nullable = false)
+    @Column(name = "name", nullable = false, unique = true)
     private String name;
 
     @Setter
@@ -52,14 +52,6 @@ public class Event {
     @JsonIgnore
     @ManyToMany(mappedBy = "events", fetch = FetchType.EAGER)
     private List<User> users;
-
-//    @OneToMany(mappedBy = "event")
-//    private List<EventsUsers> eventsUsers;
-
-
-    public void addUser(User user) {
-        this.users.add(user);
-    }
 
     public List<User> getUsers() {
         return this.users;

@@ -63,9 +63,6 @@ public class User implements UserDetails {
             joinColumns = @JoinColumn(name = "user_id"),
             inverseJoinColumns = @JoinColumn(name = "event_id"))
     private List<Event> events;
-//
-//    @OneToMany(mappedBy = "user")
-//    private List<EventsUsers> eventsUsers;
 
     @Enumerated(EnumType.STRING)
     private Role role;
